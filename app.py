@@ -4,7 +4,7 @@ from googletrans import Translator
 
 st.set_page_config(page_title="Smart City Assistant", layout="centered")
 
-API_URL = "http://localhost:8000"
+API_URL = "https://smart-city-assistant-backend.onrender.com"
 
 # -----------------------------
 # Translator Setup
