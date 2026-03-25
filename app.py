@@ -1,31 +1,31 @@
 import streamlit as st
 import requests
-from googletrans import Translator
+
 
 st.set_page_config(page_title="Smart City Assistant", layout="centered")
 
 API_URL = "https://smart-city-assistant-backend.onrender.com"
 
-# -----------------------------
-# Translator Setup
-# -----------------------------
-translator = Translator()
+
 
 def translate_text(text, target_lang):
     try:
-        result = translator.translate(str(text), dest=target_lang)
-        return result.text
+        res = requests.post(
+            f"{API_URL}/translate",
+            json={
+                "text": str(text),
+                "target_lang": target_lang
+            }
+        )
+        return res.json().get("translated_text", text)
     except:
         return text
 
 
-# -----------------------------
-# Language Selection
-# -----------------------------
 language_dict = {
-    "English": "en",
-    "Hindi": "hi",
-    "Telugu": "te"
+    "English": "English",
+    "Hindi": "Hindi",
+    "Telugu": "Telugu"
 }
 
 selected_language = st.selectbox("🌐 Select Language", list(language_dict.keys()))
