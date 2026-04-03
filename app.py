@@ -17,7 +17,7 @@ section[data-testid="stSidebar"] > div {
 </style>
 """, unsafe_allow_html=True)
 
-API_URL = "http://localhost:8000"
+API_URL = "https://smart-city-assistant-backend.onrender.com"
 
 # -----------------------------
 # SESSION STATE
