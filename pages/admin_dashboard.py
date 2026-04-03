@@ -4,7 +4,7 @@ def run():
     import pandas as pd
     import matplotlib.pyplot as plt
 
-    BASE_URL = "http://127.0.0.1:8000"
+    BASE_URL = "https://smart-city-assistant-backend.onrender.com"
 
     # ==============================
     # 🎨 CLEAN UI (HIDE PAGES)
